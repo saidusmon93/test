@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="favicon-32x32.png" type="image/gif" sizes="16x16">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Ultra&display=swap');
+
+        body {
+            background-image: url(https://www.teahub.io/photos/full/199-1995023_niagara-falls-hd-wallpaper.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            font-family: 'Ultra', serif;
+        }
+
+        label {
+            font-family: 'Satisfy', cursive;
+            font-size: 30px !important
+        }
+
+        label {
+            width: 150px;
+        }
+        p  {
+            color: crimson;
+        }
+    </style>
+    <title>Test</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col  m-auto ">
+                <h1 class="mb-2 mt-3">Niagara sharsharasi qayerda joylashgan</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col ">
+                <form action="">
+                    <input type="radio" name="r1" class="btn-check mt-4 " name="options-outlined" id="success-outlined"
+                        value="Canada" onclick="fun1()">
+                    <label class="btn btn-outline-success mt-3 border-danger" for="success-outlined">Canada</label>
+                    <br>
+                    <input type="radio" name="r1" class="btn-check" name="options-outlined" id="success-outlined1"
+                        value="Avstraliya" onclick="fun1()">
+                    <label class="btn btn-outline-success mt-2 border-danger" for="success-outlined1">Avstraliya</label>
+                    <br>
+                    <input type="radio" name="r1" name="btn" class="btn-check" name="options-outlined"
+                        id="success-outlined2" class="btn btn-primary" value="Amerika" onclick="fun1()">
+                    <label class="btn btn-outline-success mt-2 border-danger" for="success-outlined2">Amerika</label>
+                </form>
+            </div>
+            <div class="col">
+                <h1 id="h1" class="mb-5"></h1>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col  m-auto ">
+                <h1 class="mb-2 mt-3">Dunyodagi eng katta Ko'l nomi</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col ">
+                <form action="">
+                    <input type="radio" name="r2" class="btn-check mt-4 " name="options-outlined"
+                        id="success-outlined11" value="Ilmen" onclick="fun1()">
+                    <label class="btn btn-outline-success mt-3 border-danger"
+                        for="success-outlined11">Ilmen</label>
+                    <br>
+                    <input type="radio" name="r2" class="btn-check" name="options-outlined" id="success-outlined22"
+                        value="Baykal" onclick="fun1()">
+                    <label class="btn btn-outline-success mt-2 border-danger" for="success-outlined22">Baykal</label>
+                    <br>
+                    <input type="radio" name="r2" name="btn" class="btn-check" name="options-outlined"
+                        id="success-outlined33" class="btn btn-primary" value="Kaspiy" onclick="fun1()">
+                    <label class="btn btn-outline-success mt-2 border-danger" for="success-outlined33">Kaspiy</label>
+                    <br>
+                    <input class="btn btn-danger mb-3 mt-4" type="button" id="btn" value="OK">
+                </form>
+            </div>
+            <div class="col">
+                <h1 id="h2" class="mb-5"></h1>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var ans = [
+            "Canada",
+            "Avstraliya",
+            "Amerika",
+            "Kaspiy",
+            "Ilmen",
+            'Baykal'
+
+        ]
+        var score = `<p>Javobni kiriting!</p>`;
+        var score1 = `<p>Javobni kiriting!</p>`;
+        var h1 = document.getElementById("h1");
+        var h2 = document.getElementById("h2");
+        var btn = document.getElementById("btn")
+
+        function fun1(e) {
+            var radi = document.getElementsByName('r1');
+            var rad = document.getElementsByName('r2');
+            for (let i = 0; i < radi.length; i++) {
+                if (radi[i].checked == true && radi[i].value == ans[0]) {
+                    score = "To'gri!"
+                }
+                if (radi[i].checked && radi[i].value !== ans[0]) {
+                    score = "<p>Noto'gri!</p>"
+                }
+                if (rad[i].checked == true && rad[i].value == ans[3]) {
+                    score1 = "To'gri!";
+                }
+                if (rad[i].checked && rad[i].value !== ans[3]) {
+                    score1 = "<p>Noto'gri!</p>"
+                }
+            }
+
+
+        }
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            h1.innerHTML = score;
+            h2.innerHTML = score1;
+        });
+    </script>
+</body>
+
+</html>
